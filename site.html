@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Example Website</title>
+	<style>
+		* {
+			/* 
+				Remove margin e padding de todos os elementos html;  
+				box-sizing faz o padding não influenciar no width e height.
+			*/
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html, body {
+			height: 100%; /* Sticky footer  */
+			font-size: 16px;
+			font-family: 'Roboto', sans-serif;
+		}
+		body {
+			display: flex; /* Sticky footer */
+			flex-direction: column; /* Sticky footer */
+		}
+		.container {
+			max-width: 1140px;
+			margin: 0 auto;
+		}
+		.header {
+			background: #f00;
+			padding: 10px;
+		}
+		.header .header-content {
+			display: flex; /* Flex */
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.header-content .navbar ul li {
+			display: inline;
+		}
+		.header-content .navbar a {
+			text-decoration: none;
+			color: #fff;
+		}
+		.main {
+			display: grid; /* Grid */
+			grid-template-columns: 3fr 1fr;
+			grid-gap: 10px;
+			flex: 1 0 auto; /* Sticky footer */
+		}
+		.main .section, .main .article, .main .aside {
+			padding: 10px;
+			border: 1px solid black;
+		}
+		.main ul li {
+			list-style: none;
+		}
+		.main .article p {
+			text-align: justify;
+			line-height: 1.6;
+			letter-spacing: normal;
+			text-indent: 2em;
+		}
+		.main .article img {
+		  	width: 100%;
+		  	height: auto;
+		}
+		.main .article table {
+			width: 100%;
+			border-collapse: collapse;
+			border: 2px solid rgb(200,200,200);
+			letter-spacing: 1px;
+  			font-size: 0.8rem;
+		}
+		.main .article table th, .article table td {
+			border: 1px solid rgb(190,190,190);
+  			padding: 10px 20px;
+		}
+		.footer {
+			text-align: center;
+			background: #ccc;
+			padding: 10px;
+			flex-shrink: 0; /* Sticky footer */
+		}
+		.logo {
+			text-align: center;
+		}
+		@media (max-width: 768px) {
+			.header .header-content {
+				flex-direction: column;
+			}
+			.main {
+				grid-template-columns: 1fr;
+			}
+		}
+		/* Remover styles padrão de inputs */
+		/*input {
+		  	-webkit-appearance: none; 
+		  	appearance: none;
+		}*/
+		button, input, select, textarea {
+		  	font-family : inherit;
+		  	font-size   : 100%;
+		}
+		input, textarea, select, button {
+		  	width : 150px;
+		  	margin: 0;
+		  	box-sizing: border-box;
+		}
+		/* Colorindo a validação dos inputs - CSS pseudo-classes */
+		input:valid {
+		  border: 1px solid green;
+		}
+
+		input:invalid {
+		  border: 1px solid red;
+		} 
+	</style>
+</head>
+<body>
+
+	<header class="header">
+		<div class="header-content container">
+			<figure class="logo"> 
+				<img src="images/html.png" alt="logotipo" width="40">
+				<figcaption>Empresa de Tecnologia</figcaption>
+			</figure>
+			<nav class="navbar">
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Blog</a></li>
+					<li><a href="">About</a></li>
+				</ul>
+			</nav>
+			<form action="" method="get">
+				<label for="search">Pesquisa:</label>
+				<input type="search" name="search" id="search">
+				<button type="submit ">Buscar</button>		
+			</form>
+		</div>
+	</header>
+
+	<main class="main container">
+		<section class="section">
+			<header>
+				<h1>Section</h1>
+			</header>
+			<article class="article">
+				<header>
+					<h2>Article 1</h2>
+				</header>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+				<img srcset="images/large.jpg 1920w, images/medium.jpg 1280w, images/small.jpg 640w"
+     				src="images/medium.jpg" alt="technology Images">
+			</article>
+			<article class="article">
+				<header>
+					<h2>Article 2</h2>
+				</header>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<table>
+					<caption>Example Table</caption>
+					<colgroup>
+						<col>
+						<col style="background: #f5f5f5;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Table Head 1</th>
+							<th scope="col" colspan="2">Table Head 2</th>
+						</tr>
+					</thead>
+					<tbody>	
+						<tr>
+							<td>Table Row 1 - Table Data 1</td>
+							<td>Table Row 1 - Table Data 2</td>
+							<td rowspan="2">Table Row 1 - Table Data 3</td>
+						</tr>
+						<tr>
+							<td>Table Row 2 - Table Data 1</td>
+							<td>Table Row 2 - Table Data 2</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="2">Footer Data 1</td>
+							<td>Footer Data 2</td>
+						</tr>
+					</tfoot>
+				</table>
+			</article>
+			<article class="article">
+				<form action="" method="get">
+					<section>	
+						<h2>Product Info</h2>
+						<fieldset>
+							<legend>Size cup</legend>
+							<ul>
+								<li>
+									<input type="radio" name="size" id="small" value="small">
+									<label for="small">Small</label>
+								</li>
+								<li>
+									<input type="radio" name="size" id="medium" value="medium">
+									<label for="medium">Medium</label>
+								</li>
+							</ul>
+						</fieldset>
+						<p>
+							<label for="color">Color</label>
+							<input type="text" name="color" id="color" list="colors">
+							<datalist id="colors">
+								<option>Red</option>
+								<option>Green</option>
+								<option>Blue</option>
+							</datalist>
+						</p>
+						<p>
+							<label id="progress">Progress</label>
+							<progress id="progress" value="75" max="100">75%</progress>
+						</p>
+						<p>
+							<label for="space">Meter</label>
+							<meter id="space" min="0" max="100" value="8" low="10" high="90" optimum="20"></meter>
+						</p>
+						<p>
+							<label for="grade">Grade: (0 to 10)</label>
+							<input type="number" name="grade" max="10" min="0" step="1">
+						</p>
+					</section>
+					<section>
+						<h2>Contact Info</h2>
+						<p>
+							<label for="name">Name: <abbr title="required" aria-label="required">*</abbr></label>
+							<input type="text" name="name" id="name" pattern="^[A-Za-z\s]+$" title="Only Caracters" maxlength="10" required>
+						</p>
+						<p>
+							<label for="emails">Emails: </label>
+							<input type="email" name="emails" id="emails" multiple>
+						</p>
+					</section>
+					<p>
+						<button type="submit">Submit</button>
+					</p>
+				</form>
+			</article>
+		</section>
+		<aside class="aside">
+			<ul>
+				<li>Aside 1</li>
+				<li>Aside 2</li>
+				<li>Aside 3</li>
+			</ul>
+		</aside>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>Footer</p>
+		</div>
+	</footer>
+
+</body>
+</html>
