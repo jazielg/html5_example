@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            margin: 50px 30px;
+        }
+
+        article {
+            margin: 10px 0;
+        }
+
+        /* BOX COLORS */
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: blue;
+        }
+
+        .box3 {
+            background-color: green;
+        }
+
+        .box4 {
+            background-color: grey;
+        }
+
+        .box5 {
+            background-color: indigo;
+        }
+
+        .box6 {
+            background-color: orange;
+        }
+
+        /* FLEXBOX */
+        .flex {
+            display: flex;
+        }
+
+        .flex>div {
+            flex: 1;
+            padding: 10px;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 150px 50px;
+            grid-gap: 10px;
+        }
+
+        /* More grid */
+        .grid-box1 {
+            background-color: palegreen;
+            grid-column: 2 / 4;
+            grid-row: 1;
+        }
+
+        .grid-box2 {
+            background-color: paleturquoise;
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .grid-box3 {
+            background-color: palevioletred;
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        /* FLOAT */
+        .float .float-box1 {
+            float: left;
+            height: 150px;
+            width: 200px;
+            margin-right: 20px;
+            background-color: saddlebrown;
+        }
+
+        /* RELATIVE POSITION */
+        .positioned-relative {
+            position: relative;
+            background: rgba(255, 84, 104, .3);
+            border: 2px solid rgb(255, 84, 104);
+            top: 30px;
+            left: 30px;
+        }
+
+        /* ABSOLUTE POSITION */
+        .positioned-absolute {
+            position: absolute;
+            background: rgba(255, 84, 104, .3);
+            border: 2px solid rgb(255, 84, 104);
+            top: 30px;
+            left: 30px;
+        }
+
+        /* FIXED POSITION */
+        .positioned-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: silver;
+            border: 1px solid slategrey;
+        }
+
+        /* STICKY POSITION */
+        .positioned-sticky {
+            position: sticky;
+            top: 30px;
+            left: 30px;
+            background-color: red;
+        }
+
+        /* MULTI-COLUMN LAYOUT */
+        .multi-column {
+            column-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <section>
+            <header>
+                <h2>FLEXBOX</h2>
+            </header>
+            <article class="flex">
+                <div class="box1">One</div>
+                <div class="box2">Two</div>
+                <div class="box3">Three</div>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h2>GRID</h2>
+            </header>
+            <article class="grid">
+                <div class="box1">One</div>
+                <div class="box2">Two</div>
+                <div class="box3">Three</div>
+                <div class="box4">Four</div>
+                <div class="box5">Five</div>
+                <div class="box6">Six</div>
+            </article>
+            <header>
+                <h3>More GRID</h3>
+            </header>
+            <article class="grid">
+                <div class="grid-box1">Grid One</div>
+                <div class="grid-box2">Grid Two</div>
+                <div class="grid-box3">Grid Three</div>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h2>FLOAT</h2>
+            </header>
+            <article class="float">
+                <div class="float-box1"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed id libero dignissimos quibusdam fuga
+                    molestias dolor suscipit sequi eligendi quae iste molestiae, iusto minima praesentium veritatis
+                    totam consectetur labore dolores.
+                </p>
+            </article>
+        </section>
+
+        <div style="overflow: auto;"></div>
+        <br><br>
+
+        <section>
+            <header>
+                <h2>RELATIVE POSITION</h2>
+            </header>
+            <article>
+                <h3>Positioning</h3>
+                <p>I am a basic block level element.</p>
+                <p class="positioned-relative">I am a relative block level element.</p>
+                <p>I am a basic block level element.</p>
+            </article>
+        </section>
+
+        <section style="position: relative;">
+            <header>
+                <h2>ABSOLUTE POSITION</h2>
+            </header>
+            <article>
+                <h3>Positioning</h3>
+                <p>I am a basic block level element.</p>
+                <p class="positioned-absolute">I am a absolute element with relative parent.</p>
+                <p>I am a basic block level element.</p>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h2>FIXED POSITION</h2>
+            </header>
+            <article>
+                <h3>Positioning</h3>
+                <p>I am a basic block level element.</p>
+                <p class="positioned-fixed">I am a fixed element.</p>
+                <p>I am a basic block level element.</p>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h2>STICKY POSITION AND MULTI-COLUMN</h2>
+            </header>
+            <article class="multi-column">
+                Sticky positioning
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia
+                    lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor
+                    imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer
+                    ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque,
+                    ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet
+                    turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin
+                    blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.
+                </p>
+                <p class="positioned-sticky">
+                    Sticky
+                </p>
+                <p>
+                    Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis
+                    est, posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget
+                    aliquam lorem. Vivamus tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus
+                    sed lobortis finibus. Vivamus eu urna eget velit cursus viverra quis vestibulum sem. Aliquam
+                    tincidunt eget purus in interdum. Cum sociis natoque penatibus et magnis dis parturient montes,
+                    nascetur ridiculus mus.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia
+                    lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor
+                    imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer
+                    ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque,
+                    ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet
+                    turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin
+                    blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.
+                </p>
+            </article>
+        </section>
+    </main>
+
+</body>
+
+</html>
